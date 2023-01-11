@@ -1,0 +1,40 @@
+// Animation moving the container to the bottom
+@keyframes moveY {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(30vh);
+    }
+}
+
+@mixin moveYAnimation {
+    animation-name: moveY;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+//Delayed description animation
+
+@keyframes oppacityHeader {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+@mixin oppacityHeaderAnimation {
+    animation-name: oppacityHeader;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}

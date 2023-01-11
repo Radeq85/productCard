@@ -1,0 +1,238 @@
+body {
+    background: $firstColor;
+    height: 100vh;
+    width: 99.5vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.container {
+    background: rgb(255, 255, 255);
+    width: 70%;
+    max-height: 60%;
+    display: flex;
+    gap: 2%;
+    padding: 2%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 1px $thirdColor;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+    @include mq(smartphone) {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-template-rows: 45% 30% 20%;
+        grid-template-areas:
+            "img header"
+            "img price "
+            "img button";
+        justify-content: center;
+        row-gap: 1%;
+        column-gap: 2%;
+        width: 60%;
+
+    }
+
+    @include mq(tablet) {
+        width: 50%;
+        height: 30%;
+    }
+
+    @include landscape {
+        @include mq(tablet) {
+            width: 60%;
+            height: 45%;
+        }
+    }
+
+
+    @include mq(desktop) {
+        width: 40%;
+        height: 40%;
+    }
+
+    // styling for open the description
+    &.show {
+        transition: 1s;
+        width: 100%;
+        height: 40%;
+        border-radius: 20px 20px 0 0;
+        gap: 3%;
+
+
+        @include portrait {
+            @media(max-width: 750px) {
+                @include moveYAnimation;
+            }
+        }
+
+
+        @include mq(smartphone) {
+            width: 70%;
+            height: 50%;
+            grid-template-columns: 10% 50% 35%;
+            grid-template-rows: 48% 30% 20%;
+            grid-template-areas:
+                "img description header"
+                "img description price "
+                "img description button";
+            justify-content: center;
+            row-gap: 1%;
+            column-gap: 2%;
+            border-radius: 20px;
+        }
+
+
+        // for tablet 
+        @media(min-width: 750px) {
+            @include portrait {
+                width: 70%;
+                height: 30%;
+            }
+        }
+
+
+
+
+        @include mq(desktop) {
+            width: 60%;
+            height: 50%;
+        }
+    }
+
+
+    img {
+        width: 80%;
+        padding: 5%;
+
+        @include mq(smartphone) {
+            width: 80%;
+            grid-area: img;
+            place-self: center;
+            padding: 5%;
+        }
+
+        @include mq(desktop) {
+            width: 90%;
+            padding: 5%;
+
+        }
+
+        // styling for open the description
+        &.show {
+            transform: translateY(-70%);
+            position: absolute;
+            width: 85%;
+            transition: 2s;
+            margin-bottom: 5%;
+
+            @include mq(smartphone) {
+                transform: translateX(-25%);
+                position: absolute;
+                width: 500%;
+                transition: 2s;
+
+            }
+
+            @include mq(desktop) {
+                width: 450%;
+                transform: translateX(-15%);
+            }
+        }
+    }
+
+    header {
+        @include mq(smartphone) {
+            align-self: center;
+            grid-area: header;
+        }
+
+        // styling for open the description
+        &.show {
+            @include mq(smartphone) {
+                @include landscape {
+                    @include oppacityHeaderAnimation;
+                }
+            }
+        }
+    }
+
+    .price {
+        margin-bottom: 2%;
+
+        @include mq(smartphone) {
+            align-self: center;
+            margin-bottom: 2%;
+            grid-area: price;
+        }
+    }
+
+    .descriptionBtn {
+        background: $secondColor;
+        padding: 2% 5%;
+        border-radius: 10px;
+        border: 1px solid $secondColor;
+        animation-duration: 1.5s;
+        cursor: pointer;
+
+
+        @include mq(smartphone) {
+            grid-area: button;
+            margin: 2%;
+            width: 50%;
+            place-self: center;
+        }
+    }
+
+
+    .description {
+        display: none;
+        margin: 2% 3%;
+
+        @include mq(smartphone) {
+            grid-area: description;
+
+        }
+
+        // styling for open the description
+        &.show {
+            display: block;
+            @include oppacityHeaderAnimation;
+
+            @include mq(smartphone) {
+                @include landscape {
+                    display: block;
+                    @include oppacityHeaderAnimation;
+                }
+            }
+        }
+
+    }
+}
+
+// button close description
+.close {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    background-color: $secondColor;
+    cursor: pointer;
+    z-index: 3;
+
+}

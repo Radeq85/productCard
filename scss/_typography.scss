@@ -1,0 +1,96 @@
+.container {
+    font-size: $baseFontSize;
+    font-family: $fontFamily;
+    color: $fontColor;
+
+    h1 {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+
+        @include mq(smartphone) {
+            font-size: 1.2rem;
+        }
+
+        @include mq(tablet) {
+            font-size: 1.4rem;
+
+        }
+
+        @include mq(desktop) {
+            font-size: 1.5rem;
+
+        }
+    }
+
+    h2 {
+        font-weight: 800;
+        font-size: 1rem;
+
+        @include mq(smartphone) {
+            font-size: 1.2rem;
+        }
+
+        @include mq(tablet) {
+            font-size: 1.4rem;
+
+        }
+
+        @include mq(desktop) {
+            font-size: 1.6rem;
+
+        }
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 0.75rem;
+        margin: 2% 1%;
+        color: $secondColor;
+
+        @include mq(smartphone) {
+            font-size: 0.9rem;
+        }
+
+        @include mq(tablet) {
+            font-size: 1rem;
+
+        }
+
+        @include mq(desktop) {
+            font-size: 1.2rem;
+
+        }
+    }
+
+    p {
+        font-weight: 200;
+        font-size: 0.7rem;
+        text-align: justify;
+        text-align-last: center;
+
+        @include mq(smartphone) {
+            font-size: 0.8rem;
+        }
+
+        @include mq(tablet) {
+            font-size: 1rem;
+
+        }
+
+        @include mq(desktop) {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+    }
+
+
+}
+
+button {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: white;
+
+}

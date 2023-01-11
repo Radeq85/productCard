@@ -6,28 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style/style.css">
+
 </head>
 
-<body>
-    <div class="container">
+<body class="noShow">
+    <button class="close">x</button>
 
-        <header>
-            <h2>Strelitzia nicolai</h2>
-            <h4>elegancka, ciemnozielona barwa liści</h4>
+    <div class="container noShow">
+
+        <header class="noShow">
+            <h1>Strelitzia nicolai</h1>
+            <h3>elegancka, ciemnozielona barwa liści</h3>
         </header>
 
-        <img src="img/plant.png" alt="roślina doniczkowa">
+        <img class="noShow" src="img/plant.png" alt="roślina doniczkowa">
 
-        <div class="price">18,55 zł</div>
-        <div class="detail">Niezwykła roślina doniczkowa często nazywana również rajskim ptakiem ze względu na kształt
-            wytwarzanych przez nią kwiatów. W naturalnym środowisku rośnie nad brzegami jezior oraz rzek w południowych
-            regionach Afryki. Strelitzia nicolai cechuje się wolnym tempem wzrostu. W uprawie mieszkaniowej wielkość
-            rośliny rzadko przekracza 200 centymetrów. Jej liście są niezwykle okazałe i osiągają pokaźny rozmiar.</div>
+        <div class="price">
+            <h2>18,55 zł</h2>
+        </div>
+        <div class="description noShow">
+            <p> Niezwykła roślina doniczkowa często nazywana również rajskim ptakiem ze względu na kształt
+                wytwarzanych przez nią kwiatów. W naturalnym środowisku rośnie nad brzegami jezior oraz rzek w
+                południowych
+                regionach Afryki. Strelitzia nicolai cechuje się wolnym tempem wzrostu. W uprawie mieszkaniowej wielkość
+                rośliny rzadko przekracza 200 centymetrów. Jej liście są niezwykle okazałe i osiągają pokaźny rozmiar.
+            </p>
+        </div>
 
-        <button>Opis</button>
+        <button class="descriptionBtn animate__animated animate__delay-4s animate__repeat-2">Opis</button>
 
     </div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

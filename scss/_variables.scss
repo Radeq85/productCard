@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;600;800&display=swap');
+
+$baseFontSize: 16px;
+$fontFamily: 'Nunito',
+sans-serif;
+
+$firstColor: #F2AE30;
+$secondColor: #024959;
+$thirdColor: #A1A2A6;
+$fontColor: #555555;
+
+
+$breakpoints:('smartphone': 600px, 'tablet': 992px,
+    'desktop': 1200px,
+);
+
+@mixin mq($breakpoint) {
+
+
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+;
+
+@mixin portrait {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
